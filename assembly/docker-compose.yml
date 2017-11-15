@@ -1,0 +1,18 @@
+version: '2'
+services:
+  db:
+    image: mysql:5.5
+    container_name: myDiary
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_USER=myDiary
+      - MYSQL_DATABASE=myDiary
+      - MYSQL_ROOT_PASSWORD=111111
+    networks:
+      main:
+        aliases:
+          - myDiary
+networks:
+  main:
